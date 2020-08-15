@@ -1,28 +1,26 @@
-![cover_photo](./LC-Logo-Official-min-1024x418.png)
+![cover_photo](./Figure/LC-Logo-Official-min-1024x418.png)
 
 
 
 ## 1. Problem Identification
 
-#### 1.1. Background: Lending Club
+#### 1.1. Background: Corporate Transcripts
 
-*[LendingClub](https://www.lendingclub.com/) is an American peer-to-peer lending company, headquartered in San Francisco, California. It was the first peer-to-peer lender to register its offerings as securities with the Securities and Exchange Commission (SEC), and to offer loan trading on a secondary market. LendingClub is the world's largest peer-to-peer lending platform. The company claims that $15.98 billion in loans had been originated through its platform up to December 31, 2015.
+*[S&P Global](https://www.spglobal.com/marketintelligence/en/documents/spglobal_transcripts-textual-data-analytics-brochure.pdf) provides unstructured textual data in machine-readable format with metadata tagging for quicker analysis. The transcripts of call data range from earnings, M&A, guidance to special calls and conferences.
 
-LendingClub enables borrowers to create unsecured personal loans between $1,000 and $40,000. The standard loan period is three years. Investors can search and browse the loan listings on LendingClub website and select loans that they want to invest in based on the information supplied about the borrower, amount of loan, loan grade, and loan purpose. Investors make money from interest. LendingClub makes money by charging borrowers an origination fee and investors a service fee.[Company Wiki Page](https://en.wikipedia.org/wiki/LendingClub)*
+With rapid development in Natural Language Processing field, more sophisticated tools have been introduced, such as SpaCy, Gensim, BERT and a plethora of sentiment analysis packages in NLTK (Vader, etc). This project takes advantage of the recent breakthrough in NLP and applies the technique on the transcripts data offered by S&P Global from 2017 to 2018. [NLP](https://en.wikipedia.org/wiki/Natural_language_processing)*
 
 #### 1.2 Problem Statement
 
-In this capstone project, my goal is to create an interest rate generator for unsecured personal loans issued by Lending Club based on the characteristics on each loan. 
+In this project, my goal is to create a trading strategy based on the sentiment analysis on company's transcripts.
 
 
 ## 2. Data Wrangling
 
 #### 2.1. Data Collection
 
-The dataset contains loan data for all loans issued through the 2007-2015, including the current loan status (Current, Late, Fully Paid, etc.) and latest payment information. The file containing loan data through the "present" contains complete loan data for all loans issued through the previous completed calendar quarter. Additional features include credit scores, number of finance inquiries, address including zip codes, and state, and collections among others. The file is a matrix of about 890 thousand observations and 75 variables. The datast is acquired through the Kaggle API by clicking on the links below:
+The NLP dataset contains S&P 100 companies' transcripts data from 2017 to 2018. The schema of the dataset is straightforward: companyID, date, and textual content. The stock data is obtained through Yahoo Finance Python API. 
 
-
-> * [Kaggle Dataset](https://www.kaggle.com/wendykan/lending-club-loan-data)
 
 #### 2.2. Data Definition
 
@@ -37,25 +35,33 @@ I investigated the below features with the help of info(), describe(), and panda
 
 ## 3. Data Cleaning
 
-* **Problem 1:** Handling missing data. **Solution:** use fillna() to imputate the missing value with its mean, median or mode. In some cases, just replace the missing data with zeros.
+* **Problem 1:** Handling missing data. **Solution:** there is no missing data in the datasets. 
 
 * **Problem 2:** Removing duplicates. **Solution:** use the built in Pandas DataFrame function drop_duplicates(). 
 
 
-## 4. Exploratory Data Analysis
 
-* **Boxplot:** Visualizing outliers
-![Boxplot for Visulaizing Outlier](./Capstone2boxplot.png)
-
-* **Heatmap:** Visualizing correlations
-![Heatmap for Correlations](./Capstone2Pearson.png)
-   
-
-## 5. Pre-processing and Training Data Development
+## 4. Pre-processing and Feature engineering
 
     •	Create dummy or indicator features for categorical variables
     •	Standardize the magnitude of numeric features: minmax or standard scaler
     •	Split into testing and training datasets
+
+
+## 5. Exploratory Data Analysis
+
+* **Word Cloud:** Visualizing outliers
+![Boxplot for Visulaizing Outlier](./Capstone2boxplot.png)
+
+* **pyLDAvis:** Visualizing correlations
+![Heatmap for Correlations](./Capstone2Pearson.png)
+
+* **t-SNE:** Visualizing correlations
+![Heatmap for Correlations](./Capstone2Pearson.png)
+
+* **Distribution of sentiment scores:** Visualizing correlations
+![Heatmap for Correlations](./Capstone2Pearson.png)
+
 
 
 ## 6. Modeling
