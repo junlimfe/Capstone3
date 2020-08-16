@@ -51,11 +51,12 @@ I investigated the below features with the help of info(), describe(), and panda
 ## 5. Exploratory Data Analysis
 
 
-* **pyLDAvis:** Visualizing topics
+* **pyLDAvis:** /n
 LDA(Latent Dirichlet Allocation) assumes documents produced from a specific topic follow their own probability distribution of words. Given a dataset of documents, LDA backtracks and analyzes the underlying words discribution to figure out what topics would create those documents. Here I use the popular pyLDAvis to present 10 topics embedded in transcripts data.
 ![LDA Visualization](./Figure/pyLDAvis.png)
 
-* **t-SNE:** Visualizing topics
+* **t-SNE:** 
+
 
 ![t-SNE Visualization](./Figure/t-sne.png)
 
