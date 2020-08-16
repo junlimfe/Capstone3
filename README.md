@@ -62,21 +62,24 @@ I investigated the below features with the help of info(), describe(), and panda
 ![t-SNE Visualization](./Figure/t-sne.png)
 
 #### 5.3 **Sentiment Analysis of Ford 2017-2018**
-* **Distribution of sentiment scores:** Applying Vader Lexicon, we generated the positive, negative sentiment scores in our original textual data. Neutral score has been omitted for readability of the graph.
+* **Distribution of sentiment scores:** At this stage, we are just singling out Ford(F) for some exploratory analysis. Applying Vader Lexicon, we generated the positive, negative sentiment scores in our original textual data. Neutral score has been omitted for readability of the graph.
 
 ![vader1](./Figure/vader1.png)
 
-* **Distribution of sentiment scores of aggregation based on company and month:** 
+* **Distribution of sentiment scores of aggregation based on company and month:** What is worth noticing is the lack of varability of positive or negative socres.
 
 ![vader2](./Figure/vader2.png)
 
-* **Distribution of sentiment scores after text summarization:** Visualizing distribution of sentiment scores
+* **Distribution of sentiment scores after text summarization:** We use BERT to summarize the monthly textual data before applying the Vader sentiment analysis. The purpose is to filter through most of the neutral textual data and amplify the positive and negative scores. As expected, the resultant distribution has a much imporved spread of sentiment scores. 
+
 ![vader3](./Figure/vader3.png)
 
-* **Preview of the time series of pricing and sentiment data:** 
+* **Preview of the time series of pricing and sentiment data:** We are plotting out the time series of stock price of Ford along with its sentiment scores. Thanks to text summarization by BERT, the sentiment scores are no longer flat lines due to no variablity. 
+
 ![ford1](./Figure/Ford1.png)
 
-* **Adding moving 12 months average of sentiment scores:** 
+* **Adding moving 12 months average of sentiment scores:** What we concluded from the previous step is that the absolute level of sentiment scores fails to provide directional information on stock price. We are calculating the 12 months moving average on sentiment scores. The trading hypothesis is based on the relative strength of sentiment scores with a contrarian twist: 
+
 ![ford2](./Figure/Ford2.png)
 
 * **Preview of the trading strategy:** 
