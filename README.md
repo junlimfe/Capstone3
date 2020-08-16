@@ -85,7 +85,8 @@ I investigated the below features with the help of info(), describe(), and panda
 
 ![ford2](./Figure/Ford2.png)
 
-* **Preview of the trading strategy:** Below is the cumulative return of Ford in 2018 based on the aforementioned trading strategy.
+* **Preview of the trading strategy:** Below is the cumulative return of Ford in 2018 based on the aforementioned trading strategy. We generated $2.17
+of profit on our initial $11 investment.
 
 ![waterfall](./Figure/Waterfall.png)
 
@@ -131,7 +132,7 @@ The problem essentially boils down to classification: to predict whether the sto
 
 ###### 6.2.1. Grid Search Cross Validation on Random Forest Gradient Boost
 
-We applied GridSearchCV on Random Forest Gradient Boost. 
+We applied GridSearchCV on Random Forest Gradient Boost: 
 
   * 'learning_rate': (0.05, 0.1, 0.25, 0.5, 0.75, 1)
   * 'max_depth':np.arange(1,5)
