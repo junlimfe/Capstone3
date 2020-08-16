@@ -70,7 +70,7 @@ I investigated the below features with the help of info(), describe(), and panda
 
 ![vader2](./Figure/vader2.png)
 
-* **Distribution of sentiment scores after text summarization:** We use BERT to summarize the monthly textual data before applying the Vader sentiment analysis. The purpose is to filter through most of the neutral textual data and amplify the positive and negative scores. As expected, the resultant distribution has a much imporved spread of sentiment scores. 
+* **Distribution of sentiment scores after text summarization:** We use BERT to summarize the monthly textual data before applying the Vader sentiment analysis. The purpose is to filter through most of the neutral textual data and amplify the positive and negative scores. As expected, the resultant distribution has a much improved range of sentiment scores. 
 
 ![vader3](./Figure/vader3.png)
 
@@ -94,32 +94,33 @@ I investigated the below features with the help of info(), describe(), and panda
 
 #### 6.1. Method
 
-The problem eseentially boils down to classification: to predict whether the stock is going up or down. Below are the classification models explored in this report:
+The problem essentially boils down to classification: to predict whether the stock is going up or down. Below are the classification models explored in this project:
 
-1. **Logistic Regression:** The simplest classification model.
+1. **Logistic Regression:** Let's start with the simplest classification model. Model evaluation is based on ROC AUC score. Here it is 0.527 for the first model.
+
 ![lr](./Figure/Model_LR_AUC.png)
 
 
-2. **Gaussian Naive Bayes:** Relatively simple but can be really powerful sometimes.
+2. **Gaussian Naive Bayes:** Relatively simple but can be really powerful sometimes. The ROC AUC score is 0.613.
 
 
 3. **Desicion Tree:**
-3.1. **Desicion Tree with Entropy:**
+3.1. **Desicion Tree with Entropy with Max Depth of 3:** The ROC AUC score is 0.613.
 ![dt_entr](./Figure/Model_DT_entr2.png)
 
 
-3.2. **Desicion Tree with Gini:**
+3.2. **Desicion Tree with Gini with Max Depth of 3:** The ROC AUC score is 0.613.
 ![dt_gini](./Figure/Model_DT_gini2.png)
 
 
-4. **Random Forest:**
+4. **Random Forest:** The ROC AUC score is 0.613.
 ![rf](./Figure/Model_RF_Feature.png)
 
 
-5. **Random Forest Gradient Boost:**
+5. **Random Forest Gradient Boost:** The ROC AUC score is 0.613.
 
 
-6. **Random Forest XG Boost:**
+6. **Random Forest XG Boost:** The ROC AUC score is 0.613.
 
 
 
