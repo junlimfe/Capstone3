@@ -83,16 +83,29 @@ I investigated the below features with the help of info(), describe(), and panda
 The problem eseentially boils down to classification: to predict whether the stock is going up or down. Below are the classification models explored in this report:
 
 1. **Logistic Regression:** The simplest classification model.
+![Heatmap for Correlations](./Figure/Model_LR_AUC.png)
+
 
 2. **Gaussian Naive Bayes:** Relatively simple but can be really powerful sometimes.
+![Heatmap for Correlations](./Figure/Model_GNB_AUC.png)
 
 3. **Desicion Tree:**
+![Heatmap for Correlations](./Figure/Model_DT_entr2.png)
+![Heatmap for Correlations](./Figure/Model_DT_entr2_AUC.png)
+![Heatmap for Correlations](./Figure/Model_DT_gini2.png)
+![Heatmap for Correlations](./Figure/Model_DT_gini2_AUC.png)
 
 4. **Random Forest:**
+![Heatmap for Correlations](./Figure/Model_RF_AUC.png)
+![Heatmap for Correlations](./Figure/Model_RF_Feature.png)
 
 5. **Random Forest Gradient Boost:**
+![Heatmap for Correlations](./Figure/Model_RFGB_AUC.png)
+
 
 6. **Random Forest XG Boost:**
+![Heatmap for Correlations](./Figure/Model_RFXGB_AUC.png)
+
 
 
 **WINNER:Gaussian Naive Bayes** 
