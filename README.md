@@ -51,29 +51,29 @@ I investigated the below features with the help of info(), describe(), and panda
 ## 5. Exploratory Data Analysis
 
 
-* **pyLDAvis:** Visualizing correlations
+* **pyLDAvis:** Visualizing topics
 ![LDA Visualization](./Figure/pyLDAvis.png)
 
-* **t-SNE:** Visualizing correlations
+* **t-SNE:** Visualizing topics
 ![t-SNE Visualization](./Figure/t-sne.png)
 
-* **Distribution of sentiment scores:** Visualizing correlations
-![Heatmap for Correlations](./Figure/vader1.png)
+* **Distribution of sentiment scores:** Visualizing distribution of sentiment scores
+![vader1](./Figure/vader1.png)
 
-* **Preview of the trading strategy:** Visualizing correlations
-![Heatmap for Correlations](./Figure/vader2.png)
+* **Distribution of sentiment scores of aggregation based on company and month:** Visualizing distribution of sentiment scores
+![vader2](./Figure/vader2.png)
 
-* **Preview of the trading strategy:** Visualizing correlations
-![Heatmap for Correlations](./Figure/vader3.png)
+* **Distribution of sentiment scores after text summarization:** Visualizing distribution of sentiment scores
+![vader3](./Figure/vader3.png)
 
-* **Preview of the trading strategy:** Visualizing correlations
-![Heatmap for Correlations](./Figure/Ford1.png)
+* **Preview of the time series of pricing and sentiment data:** 
+![ford1](./Figure/Ford1.png)
 
-* **Preview of the trading strategy:** Visualizing correlations
-![Heatmap for Correlations](./Figure/Ford2.png)
+* **Adding moving 12 months average of sentiment scores:** 
+![ford2](./Figure/Ford2.png)
 
-* **Preview of the trading strategy:** Visualizing correlations
-![Heatmap for Correlations](./Figure/Waterfall.png)
+* **Preview of the trading strategy:** 
+![waterfall](./Figure/Waterfall.png)
 
 
 ## 6. Modeling
@@ -83,7 +83,7 @@ I investigated the below features with the help of info(), describe(), and panda
 The problem eseentially boils down to classification: to predict whether the stock is going up or down. Below are the classification models explored in this report:
 
 1. **Logistic Regression:** The simplest classification model.
-![Heatmap for Correlations](./Figure/Model_LR_AUC.png)
+![lr](./Figure/Model_LR_AUC.png)
 
 
 2. **Gaussian Naive Bayes:** Relatively simple but can be really powerful sometimes.
@@ -91,15 +91,15 @@ The problem eseentially boils down to classification: to predict whether the sto
 
 3. **Desicion Tree:**
 3.1. **Desicion Tree with Entropy:**
-![Heatmap for Correlations](./Figure/Model_DT_entr2.png)
+![dt_entr](./Figure/Model_DT_entr2.png)
 
 
 3.2. **Desicion Tree with Gini:**
-![Heatmap for Correlations](./Figure/Model_DT_gini2.png)
+![dt_gini](./Figure/Model_DT_gini2.png)
 
 
 4. **Random Forest:**
-![Heatmap for Correlations](./Figure/Model_RF_Feature.png)
+![rf](./Figure/Model_RF_Feature.png)
 
 
 5. **Random Forest Gradient Boost:**
