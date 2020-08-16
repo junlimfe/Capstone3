@@ -66,7 +66,7 @@ I investigated the below features with the help of info(), describe(), and panda
 
 ![vader1](./Figure/vader1.png)
 
-* **Distribution of sentiment scores of aggregation based on company and month:** What is worth noticing is the lack of varability of positive or negative socres.
+* **Distribution of sentiment scores aggregated based on company and month:** What is worth noticing is the lack of varability of positive or negative socres. Without a reasonable range of scores, the comparison has little statistical power and the conclusion is void of statistical significance. How to overcome the issue? BERT(Bidirectional Encoder Representations from Transformers) is the answer!
 
 ![vader2](./Figure/vader2.png)
 
@@ -74,7 +74,7 @@ I investigated the below features with the help of info(), describe(), and panda
 
 ![vader3](./Figure/vader3.png)
 
-* **Preview of the time series of pricing and sentiment data:** We are plotting out the time series of stock price of Ford along with its sentiment scores. Thanks to text summarization by BERT, the sentiment scores are no longer flat lines due to no variablity. 
+* **Preview of the time series of pricing and sentiment data:** We are plotting out the time series of stock price of Ford along with its sentiment scores. Thanks to text summarization by BERT, the sentiment scores are no longer just flat lines due to no variablity. 
 
 ![ford1](./Figure/Ford1.png)
 
@@ -94,14 +94,14 @@ I investigated the below features with the help of info(), describe(), and panda
 
 #### 6.1. Method
 
-The problem essentially boils down to classification: to predict whether the stock is going up or down. Below are the classification models explored in this project:
+The problem essentially boils down to classification: to predict whether the stock is going up or down. We are forming a dataset of five stocks: Facebook(FB), Amazon(AMZN), Apple(AAPL), Netflix(NFLX), and Alphabet (GOOGL) with all the transcripts available in 2017 and 2018. Below are the classification models explored in this project:
 
-1. **Logistic Regression:** Let's start with the simplest classification model. Model evaluation is based on ROC AUC score. Here it is 0.527 for the first model.
+1. **Logistic Regression:** Start with the simplest classification model. Model evaluation is based on ROC AUC score across the board. Here it is 0.527 for the logistic regression model.
 
 ![lr](./Figure/Model_LR_AUC.png)
 
 
-2. **Gaussian Naive Bayes:** Relatively simple but can be really powerful sometimes. The ROC AUC score is 0.613.
+2. **Gaussian Naive Bayes:** It is relatively simple but can be really powerful sometimes. The ROC AUC score is boosted up to 0.613.
 
 
 3. **Desicion Tree:**
@@ -125,12 +125,6 @@ The problem essentially boils down to classification: to predict whether the sto
     * max_features=2
     * max_depth = 2
     * random_state = 0
-
-
-
-**WINNER: Gaussian Naive Bayes** 
-
-We chose Gaussian Naive Bayes due to its simplicity and relatively high ROC AUC accuracy.
 
 
 #### 6.2. Hyperparameter Tuning
@@ -162,6 +156,7 @@ We implemented grid search cross validation on Random Forest XGboost with the be
      
 Result of Best Parameters: {'colsample_bytree': 0.3, 'eta': 0.05, 'gamma': 0.0, 'max_depth': 3, 'min_child_weight': 7} with score of 0.637.  
 
+
 #### 6.3. Model Evaluation Metrics: A summary of all the methods
 
 *AUC ROC Score
@@ -176,6 +171,11 @@ Random Forest | 0.617
 Random Forest Gradient Boost | 0.633
 Random Forest Gradient Boost with Grid Search CV | 0.634
 Random Forest XGB with Grid Search CV | 0.637
+
+
+**WINNER: Gaussian Naive Bayes** 
+
+We chose Gaussian Naive Bayes due to its simplicity and relatively high ROC AUC accuracy.
 
 
 ## 7. Future Improvements
