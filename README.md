@@ -79,6 +79,9 @@ I investigated the below features with the help of info(), describe(), and panda
 ![ford1](./Figure/Ford1.png)
 
 * **Adding moving 12 months average of sentiment scores:** What we concluded from the previous step is that the absolute level of sentiment scores fails to provide directional information on stock price. We are calculating the 12 months moving average on sentiment scores. The trading hypothesis is based on the relative strength of sentiment scores with a contrarian twist: 
+1. If positive score is above its moving average and negative score is below its moving average, we are taking a short position on the stock. 
+2. If positive score is below its moving average and negative score is above its moving average, we are taking a long position on the stock.
+3. Otherwise, we keep holding our positions from previous period. 
 
 ![ford2](./Figure/Ford2.png)
 
