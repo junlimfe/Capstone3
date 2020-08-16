@@ -1,4 +1,4 @@
-![cover_photo](./Figure/LC-Logo-Official-min-1024x418.png)
+![cover_photo](./Figure/wordcloud.png)
 
 
 
@@ -62,23 +62,33 @@ I investigated the below features with the help of info(), describe(), and panda
 * **Distribution of sentiment scores:** Visualizing correlations
 ![Heatmap for Correlations](./Capstone2Pearson.png)
 
+* **Preview of the trading strategy:** Visualizing correlations
+![Heatmap for Correlations](./Capstone2Pearson.png)
 
 
 ## 6. Modeling
 
 #### 6.1. Method
 
-There are three main types of regression models:
+The problem eseentially boils down to classification: to predict whether the stock is going up or down. Below are the classification models explored in this report:
 
-1. **Simple Regression:** Use for linear data.
+1. **Logistic Regression:** The simplest classification model.
 
-2. **Random Forest Regressor:** Random Forest Regression. If the data is nonlinear, Ensemble Method generates better predictions.
+2. **Gaussian Naive Bayes:** Relatively simple but can be really powerful sometimes.
 
-3. **Random Forest Regressor XGboost:**
+3. **Desicion Tree:**
 
-**WINNER:Random Forest Regressor XGboost** 
+4. **Random Forest:**
 
-I chose Random Forest Regressor XGboost to accomodate the nonlinear nature of the dataset.
+5. **Random Forest Gradient Boost:**
+
+6. **Random Forest XG Boost:**
+
+
+**WINNER:Gaussian Naive Bayes** 
+
+I chose Gaussian Naive Bayes due to its simplicity and relatively high accuracy.
+
 
 #### 6.2. Hyperparameter Tuning
 
