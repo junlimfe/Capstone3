@@ -52,10 +52,10 @@ I investigated the below features with the help of info(), describe(), and panda
 
 
 * **pyLDAvis:** Visualizing correlations
-![LDA Visualization](./pyLDAvis.png)
+![LDA Visualization](./Figure/pyLDAvis.png)
 
 * **t-SNE:** Visualizing correlations
-![t-SNE Visualization](./t-sne.png)
+![t-SNE Visualization](./Figure/t-sne.png)
 
 * **Distribution of sentiment scores:** Visualizing correlations
 ![Heatmap for Correlations](./Capstone2Pearson.png)
