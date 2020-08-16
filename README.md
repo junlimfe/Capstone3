@@ -58,10 +58,22 @@ I investigated the below features with the help of info(), describe(), and panda
 ![t-SNE Visualization](./Figure/t-sne.png)
 
 * **Distribution of sentiment scores:** Visualizing correlations
-![Heatmap for Correlations](./Capstone2Pearson.png)
+![Heatmap for Correlations](./Figure/vader1.png)
 
 * **Preview of the trading strategy:** Visualizing correlations
-![Heatmap for Correlations](./Capstone2Pearson.png)
+![Heatmap for Correlations](./Figure/vader2.png)
+
+* **Preview of the trading strategy:** Visualizing correlations
+![Heatmap for Correlations](./Figure/vader3.png)
+
+* **Preview of the trading strategy:** Visualizing correlations
+![Heatmap for Correlations](./Figure/Ford1.png)
+
+* **Preview of the trading strategy:** Visualizing correlations
+![Heatmap for Correlations](./Figure/Ford2.png)
+
+* **Preview of the trading strategy:** Visualizing correlations
+![Heatmap for Correlations](./Figure/Waterfall.png)
 
 
 ## 6. Modeling
