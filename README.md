@@ -53,17 +53,21 @@ I investigated the below features with the help of info(), describe(), and panda
 
 #### 5.1 **pyLDAvis:** 
 * LDA(Latent Dirichlet Allocation) assumes documents produced from a specific topic follow their own probability distribution of words. Given a dataset of documents, LDA backtracks and analyzes the underlying words discribution to figure out what topics would create those documents. Here I use the popular pyLDAvis to present 10 topics embedded in transcripts data.
+
 ![LDA Visualization](./Figure/pyLDAvis.png)
 
-* **t-SNE:** 
-
+#### 5.2 **t-SNE:** 
+* t-SNE(t-Distributed Stochastic Neighbor Embedding), similar to PCA, is a technique for dimensionality reduction that is particularly well suited for the visualization of high-dimensional datasets. Below is the application of visualizing 10 topics:
 
 ![t-SNE Visualization](./Figure/t-sne.png)
 
-* **Distribution of sentiment scores:** Visualizing distribution of sentiment scores
+#### 5.3 **Sentiment Analysis of Ford 2017-2018**
+* **Distribution of sentiment scores:** Applying Vader Lexicon, we generated the positive, negative sentiment scores in our original textual data. Neutral score has been omitted for readability of the graph.
+
 ![vader1](./Figure/vader1.png)
 
-* **Distribution of sentiment scores of aggregation based on company and month:** Visualizing distribution of sentiment scores
+* **Distribution of sentiment scores of aggregation based on company and month:** 
+
 ![vader2](./Figure/vader2.png)
 
 * **Distribution of sentiment scores after text summarization:** Visualizing distribution of sentiment scores
