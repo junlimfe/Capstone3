@@ -134,11 +134,11 @@ The problem essentially boils down to classification: to predict whether the sto
 
 We applied GridSearchCV on Random Forest Gradient Boost: 
 
-  * 'learning_rate': (0.05, 0.1, 0.25, 0.5, 0.75, 1)
-  * 'max_depth':np.arange(1,5)
-  * 'n_estimators':np.arange(20,100,20)
-  * 'max_features':np.arange(2,6,1)
-  * 5 fold cross validation
+    * 'learning_rate'       : [0.05, 0.1, 0.25, 0.5, 0.75, 1]
+    * 'max_depth'           : [1, 2, 3, 4, 5]
+    * 'n_estimators'        : [20, 40, 60, 80, 100]
+    * 'max_features'        : [2, 3, 4, 5, 6]
+    * 5 fold cross validation
   
   
 Result of Best Parameters: {'learning_rate': 0.05, 'max_depth': 1, 'max_features': 4, 'n_estimators': 20} with score of 0.634.
