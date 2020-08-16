@@ -93,6 +93,7 @@ The problem eseentially boils down to classification: to predict whether the sto
 3.1. **Desicion Tree with Entropy:**
 ![Heatmap for Correlations](./Figure/Model_DT_entr2.png)
 
+
 3.2. **Desicion Tree with Gini:**
 ![Heatmap for Correlations](./Figure/Model_DT_gini2.png)
 
