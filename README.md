@@ -1,6 +1,6 @@
 ![cover_photo](./Figure/wordcloud.png)
 
-## NLP Sentiment Analysis on Transcripts Data
+# NLP Sentiment Analysis on Transcripts Data
 
 ## 1. Problem Identification
 
