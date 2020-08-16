@@ -105,73 +105,87 @@ The problem essentially boils down to classification: to predict whether the sto
 
 
 3. **Desicion Tree:**
-3.1. **Desicion Tree with Entropy with Max Depth of 3:** The ROC AUC score is 0.613.
+3.1. **Desicion Tree with Entropy with Max Depth of 3:** The ROC AUC score is 0.543.
 ![dt_entr](./Figure/Model_DT_entr2.png)
 
 
-3.2. **Desicion Tree with Gini with Max Depth of 3:** The ROC AUC score is 0.613.
+3.2. **Desicion Tree with Gini with Max Depth of 3:** The ROC AUC score is 0.527.
 ![dt_gini](./Figure/Model_DT_gini2.png)
 
 
-4. **Random Forest:** The ROC AUC score is 0.613.
+4. **Random Forest:** The ROC AUC score is 0.617. A feature importance analysis shows that the top two features are moving average negative scores and moving average positive scores. It reinforces our belief that the relative level matters more than the absolute level of sentiment scores.
+
 ![rf](./Figure/Model_RF_Feature.png)
 
 
-5. **Random Forest Gradient Boost:** The ROC AUC score is 0.613.
+5. **Random Forest Gradient Boost:** The ROC AUC score is 0.633. The model has below parameters: 
+
+    * n_estimators=20
+    * learning_rate = 0.5
+    * max_features=2
+    * max_depth = 2
+    * random_state = 0
 
 
-6. **Random Forest XG Boost:** The ROC AUC score is 0.613.
 
+**WINNER: Gaussian Naive Bayes** 
 
-
-
-**WINNER:Gaussian Naive Bayes** 
-
-I chose Gaussian Naive Bayes due to its simplicity and relatively high accuracy.
+We chose Gaussian Naive Bayes due to its simplicity and relatively high ROC AUC accuracy.
 
 
 #### 6.2. Hyperparameter Tuning
 
-###### 6.2.1. Grid Search Cross Validation
+###### 6.2.1. Grid Search Cross Validation on Random Forest Gradient Boost
 
-I applied GridSearchCV on Random Forest Regressor. Due to the time and resource constraints, I only varied one hyperparameter: n_estimators from 100 to 1100 at the interval of 100. In the end, the best parameter for n_estimators is 500. 
+We applied GridSearchCV on Random Forest Gradient Boost. 
 
-###### 6.2.2. Randomized Search Cross Validation
+  * 'learning_rate': (0.05, 0.1, 0.25, 0.5, 0.75, 1)
+  * 'max_depth':np.arange(1,5)
+  * 'n_estimators':np.arange(20,100,20)
+  * 'max_features':np.arange(2,6,1)
+  * 5 fold cross validation
+  
+  
+Result of Best Parameters: {'learning_rate': 0.05, 'max_depth': 1, 'max_features': 4, 'n_estimators': 20} with score of 0.634.
 
-Here I was able to apply a set of parameters to search through. As a result of that, I implemented randomized search cross validation on Random Forest Regressor XGboost with the below parameter set:
 
-  * 'colsample_bytree':[0.4, 0.6, 0.8]
-  * 'gamma':[0, 0.03, 0.1, 0.3]
-  * 'min_child_weight':[1.5, 6, 10]
-  * 'learning_rate':[0.05, 0.1]
-  * 'max_depth':[3,5,7]
-  * 'n_estimators':[500]
-  * 'reg_alpha':[1e-5, 1e-2,  0.75, 1]
-  * 'reg_lambda':[1e-5, 1e-2, 0.45, 1, 1.5, 2]
-  * 'subsample':[0.6, 0.95] 
+###### 6.2.2. Grid Search Cross Validation on Random Forest XG Boost
 
-#### 6.3. Model Evaluation Metrics
+We implemented grid search cross validation on Random Forest XGboost with the below parameter set:
 
-*MAE: mean of the absolute value of errors
+     * "eta"              : [0.05, 0.10, 0.15, 0.20, 0.25, 0.30] 
+     * "max_depth"        : [ 3, 4, 5, 6, 8, 10, 12, 15]
+     * "min_child_weight" : [ 1, 3, 5, 7]
+     * "gamma"            : [ 0.0, 0.1, 0.2, 0.3, 0.4]
+     * "colsample_bytree" : [ 0.3, 0.4, 0.5, 0.7]
+     * 3 fold cross validation
+     
+Result of Best Parameters: {'colsample_bytree': 0.3, 'eta': 0.05, 'gamma': 0.0, 'max_depth': 3, 'min_child_weight': 7} with score of 0.637.  
 
-*RMSE : squared root of the mean of the squared errors.
+#### 6.3. Model Evaluation Metrics: A summary of all the methods
 
-Method | RMSE
+*AUC ROC Score
+
+Method | AUC ROC Score
 ------------ | -------------
-Random Forest Regressor| 1.3959306170693693
-Random Forest Regressor XGB | 2.347896772001473
-Random Forest Regressor XGB with Randomized Search CV | 1.281564628227814
+Logistic Regression | 0.527
+Gaussian Naive Bayes | 0.613
+Decision Tree (Entropy) | 0.543
+Decision Tree (Gini) | 0.527
+Random Forest | 0.617
+Random Forest Gradient Boost | 0.633
+Random Forest Gradient Boost with Grid Search CV | 0.634
+Random Forest XGB with Grid Search CV | 0.637
 
->***NOTE:** I choose RMSE as the accuracy metric over mean absolute error(MAE) because the errors are squared before they are averaged which penalizes large errors more. Thus, the RMSE is more desirable when the large errors are unacceptable. The lower the RMSE, the better the prediction because the RMSE takes the square root of the residual errors of the line of best fit.*
 
 ## 7. Future Improvements
 
 * SVM: use Kernel Trick along with other hyperparameter tuning to evaluate the accuracy of the model with respect to the aforementioned methods. 
 
-* Bayesian Optimization: compare the efficacy and efficiency using Bayesian Optimization to Randomized Search Cross Validation.
+* Random Search Cross Validation and Bayesian Optimization: compare the efficacy and efficiency using Bayesian Optimization and Randomized Search Cross Validation to Grid Search Cross Validation.
 
-* Due to RAM constraints, I had to train a 10% sample of the original dataset. Without resource limitations, I would pursue training on the full dataset. Preliminary tests showed that the bigger the training size, the lower the RMSE. 
+* Due to resource constraints, I had to train a sample of 5 stocks (Facebook, Amazon, Apple, Netflix and Google) for two years (2017 and 2018). Without resource limitations, I would pursue training on the S&P 500 stocks for a longer time horizon.
 
 ## 8. Credits
 
-Thanks to Jeremy Cunningham for being an amazing Springboard mentor.
+Thanks to Jeremy Cunningham for being an amazing mentor!
