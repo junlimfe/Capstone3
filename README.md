@@ -50,14 +50,12 @@ I investigated the below features with the help of info(), describe(), and panda
 
 ## 5. Exploratory Data Analysis
 
-* **Word Cloud:** Visualizing outliers
-![Boxplot for Visulaizing Outlier](./Capstone2boxplot.png)
 
 * **pyLDAvis:** Visualizing correlations
-![Heatmap for Correlations](./Capstone2Pearson.png)
+![LDA Visualization](./pyLDAvis.png)
 
 * **t-SNE:** Visualizing correlations
-![Heatmap for Correlations](./Capstone2Pearson.png)
+![t-SNE Visualization](./t-sne.png)
 
 * **Distribution of sentiment scores:** Visualizing correlations
 ![Heatmap for Correlations](./Capstone2Pearson.png)
