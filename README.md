@@ -12,7 +12,7 @@ With rapid development in Natural Language Processing ([NLP](https://en.wikipedi
 
 #### 1.2 Problem Statement
 
-In this project, my goal is to create a trading strategy based on the sentiment analysis on company's transcripts.
+In this project, our goal is to create a trading strategy based on the sentiment analysis of companys' transcripts.
 
 
 ## 2. Data Wrangling
