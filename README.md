@@ -97,29 +97,29 @@ of profit on our initial $11 investment.
 
 The problem essentially boils down to classification: to predict whether the stock is going up or down. We are forming a dataset of five stocks: Facebook(FB), Amazon(AMZN), Apple(AAPL), Netflix(NFLX), and Alphabet (GOOGL) with all the transcripts available in 2017 and 2018. Below are the classification models explored in this project:
 
-1. **Logistic Regression:** Start with the simplest classification model. Model evaluation is based on ROC AUC score across the board. Here it is 0.527 for the logistic regression model.
+##### 6.1.1. **Logistic Regression:** Start with the simplest classification model. Model evaluation is based on ROC AUC score across the board. Here it is 0.527 for the logistic regression model.
 
 ![lr](./Figure/Model_LR_AUC.png)
 
 
-2. **Gaussian Naive Bayes:** It is relatively simple but can be really powerful sometimes. The ROC AUC score is boosted up to 0.613.
+##### 6.1.2. **Gaussian Naive Bayes:** It is relatively simple but can be really powerful sometimes. The ROC AUC score is boosted up to 0.613.
 
 
-3. **Desicion Tree:**
-3.1. **Desicion Tree with Entropy with Max Depth of 3:** The ROC AUC score is 0.543.
+##### 6.1.3. **Desicion Tree:**
+###### 6.1.3.1. **Desicion Tree with Entropy with Max Depth of 3:** The ROC AUC score is 0.543.
 ![dt_entr](./Figure/Model_DT_entr2.png)
 
 
-3.2. **Desicion Tree with Gini with Max Depth of 3:** The ROC AUC score is 0.527.
+###### 6.1.3.2. **Desicion Tree with Gini with Max Depth of 3:** The ROC AUC score is 0.527.
 ![dt_gini](./Figure/Model_DT_gini2.png)
 
 
-4. **Random Forest:** The ROC AUC score is 0.617. A feature importance analysis shows that the top two features are moving average negative scores and moving average positive scores. It reinforces our belief that the relative level matters more than the absolute level of sentiment scores.
+##### 6.1.4. **Random Forest:** The ROC AUC score is 0.617. A feature importance analysis shows that the top two features are moving average negative scores and moving average positive scores. It reinforces our belief that the relative level matters more than the absolute level of sentiment scores.
 
 ![rf](./Figure/Model_RF_Feature.png)
 
 
-5. **Random Forest Gradient Boost:** The ROC AUC score is 0.633. The model has below parameters: 
+##### 6.1.5. **Random Forest Gradient Boost:** The ROC AUC score is 0.633. The model has below parameters: 
 
     * n_estimators=20
     * learning_rate = 0.5
