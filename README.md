@@ -85,7 +85,8 @@ I investigated the below features with the help of info(), describe(), and panda
 
 ![ford2](./Figure/Ford2.png)
 
-* **Preview of the trading strategy:** 
+* **Preview of the trading strategy:** Below is the cumulative return of Ford in 2018 based on the aforementioned trading strategy.
+
 ![waterfall](./Figure/Waterfall.png)
 
 
