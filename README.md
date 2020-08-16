@@ -1,6 +1,6 @@
 ![cover_photo](./Figure/wordcloud.png)
 
-
+## NLP Sentiment Analysis on Transcripts Data
 
 ## 1. Problem Identification
 
@@ -41,7 +41,7 @@ I investigated the below features with the help of info(), describe(), and panda
 
 
 
-## 4. Pre-processing and Feature engineering
+## 4. Pre-processing and Feature Engineering
 
     •	Create dummy or indicator features for categorical variables
     •	Standardize the magnitude of numeric features: minmax or standard scaler
@@ -52,9 +52,11 @@ I investigated the below features with the help of info(), describe(), and panda
 
 
 * **pyLDAvis:** Visualizing topics
+LDA(Latent Dirichlet Allocation) assumes documents produced from a specific topic follow their own probability distribution of words. Given a dataset of documents, LDA backtracks and analyzes the underlying words discribution to figure out what topics would create those documents. Here I use the popular pyLDAvis to present 10 topics embedded in transcripts data.
 ![LDA Visualization](./Figure/pyLDAvis.png)
 
 * **t-SNE:** Visualizing topics
+
 ![t-SNE Visualization](./Figure/t-sne.png)
 
 * **Distribution of sentiment scores:** Visualizing distribution of sentiment scores
